@@ -7,15 +7,25 @@ public class GuessingGameApp {
         Scanner in = new Scanner(System.in);
         int randomNumber = 7;
         int guessedNumber = 0;
+        int guessCount = 0;
 
         System.out.print("Welcome to the Guessing Game! Please Guess a number between 1 and 10, or type 0 for instructions: ");
         do {
             guessedNumber = in.nextInt();
+            guessCount++;
+
 
             if(guessedNumber == 0) {
                 System.out.println("The goal of the game is to guess the random number between 1 and 10. Good Luck!");
+                guessCount--;
             }
-        } while (guessedNumber == 0);
+            else if(guessedNumber != randomNumber && guessCount < 2) {
+                System.out.print("Wrong! You can guess 1 more time: ");
+            }
+            else {
+                break;
+            }
+        } while (guessedNumber == 0 || guessCount < 2);
         if(guessedNumber == randomNumber) {
             System.out.println("You win! " + randomNumber + " was the number!");
         }
