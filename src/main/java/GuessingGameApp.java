@@ -14,7 +14,10 @@ public class GuessingGameApp {
             guessedNumber = in.nextInt();
             guessCount++;
 
-
+            if(guessedNumber == -1) {
+                System.out.println("Exiting Application..");
+                return;
+            }
             if(guessedNumber == 0) {
                 System.out.println("The goal of the game is to guess the random number between 1 and 10. Good Luck!");
                 guessCount--;
