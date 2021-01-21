@@ -5,7 +5,7 @@ public class GuessingGameApp {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int randomNumber = 7;
+        int randomNumber = (int)((Math.random()*10)+1);
         int guessedNumber = 0;
         int guessCount = 0;
 
