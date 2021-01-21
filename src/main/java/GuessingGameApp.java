@@ -23,7 +23,13 @@ public class GuessingGameApp {
                 guessCount--;
             }
             else if(guessedNumber != randomNumber && guessCount < 2) {
-                System.out.print("Wrong! You can guess 1 more time: ");
+                System.out.print("Wrong! You can guess 1 more time,(HINT) the correct number is ");
+                if(guessedNumber < randomNumber) {
+                    System.out.print("greater than your guess of " + guessedNumber + ": ");
+                }
+                else {
+                    System.out.print("less than your guess of " + guessedNumber + ": ");
+                }
             }
             else {
                 break;
